@@ -1,0 +1,28 @@
+[Container]
+Image=docker.io/p3terx/aria2-pro:latest
+
+AutoUpdate=registry
+PublishPort=6800:6800
+PublishPort=6888:6888
+PublishPort=6888:6888/udp
+
+Environment=RPC_SECRET=123456
+Environment=RPC_PORT=6800
+Environment=LISTEN_PORT=6888
+
+Volume=aria2-pro-config:/config
+Volume=%h/Downloads:/downloads
+
+# SELinux considerations for Fedora/RHEL:
+# - Use :Z on volume mounts to automatically relabel directories for container access.
+#   Example:
+#     Volume=%h/Downloads:/downloads:Z
+# - If you prefer to manage SELinux labeling manually or want to disable relabeling:
+#     SecurityLabelDisable=true
+
+[Service]
+TimeoutStartSec=900
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
