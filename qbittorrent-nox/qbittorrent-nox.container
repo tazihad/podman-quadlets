@@ -13,7 +13,7 @@ Environment=PGID=1000
 # You can change 58080 to any unused port you prefer.
 Environment=QBT_WEBUI_PORT=58080
 
-# Persistent configuration storage: qBittorrent settings, WebUI config, and session data are stored here.
+# Persistent Podman config storage (any local path, e.g., Volume=%h/.config/qBittorrent:/config)
 Volume=qbittorrent-config:/config
 Volume=%h/Downloads:/downloads
 
