@@ -1,0 +1,37 @@
+[Container]
+Image=docker.io/qbittorrentofficial/qbittorrent-nox:latest
+
+AutoUpdate=registry
+PublishPort=58080:58080
+PublishPort=6881:6881/tcp
+PublishPort=6881:6881/udp
+Timezone=Asia/Dhaka
+
+Environment=PUID=1000
+Environment=PGID=1000
+# Set the port for qBittorrent Web UI access at http://localhost:58080
+# You can change 58080 to any unused port you prefer.
+Environment=QBT_WEBUI_PORT=58080
+
+
+Volume=%h/.config/qBittorrent:/config
+Volume=%h/Downloads:/downloads
+
+# SELinux considerations for Fedora/RHEL:
+# - Use :Z on volume mounts to automatically relabel directories for container access.
+#   Example:
+#     Volume=%h/.config/qBittorrent:/config:Z
+#     Volume=%h/Downloads:/downloads:Z
+# - If you prefer to manage SELinux labeling manually or want to disable relabeling:
+#     SecurityLabelDisable=true
+
+User=root
+UserNS=keep-id
+Network=host
+
+[Service]
+Restart=on-failure
+TimeoutStartSec=900
+
+[Install]
+WantedBy=default.target
