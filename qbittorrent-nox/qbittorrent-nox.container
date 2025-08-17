@@ -13,8 +13,8 @@ Environment=PGID=1000
 # You can change 58080 to any unused port you prefer.
 Environment=QBT_WEBUI_PORT=58080
 
-
-Volume=%h/.config/qBittorrent:/config
+# Persistent configuration storage: qBittorrent settings, WebUI config, and session data are stored here.
+Volume=qbittorrent-config:/config
 Volume=%h/Downloads:/downloads
 
 # SELinux considerations for Fedora/RHEL:
