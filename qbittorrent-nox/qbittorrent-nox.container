@@ -2,8 +2,8 @@
 Image=docker.io/qbittorrentofficial/qbittorrent-nox:latest
 
 AutoUpdate=registry
-PublishPort=58080:58080
-PublishPort=6881:6881/tcp
+PublishPort=8080:8080
+PublishPort=6881:6881
 PublishPort=6881:6881/udp
 Timezone=Asia/Dhaka
 
@@ -11,7 +11,7 @@ Environment=PUID=1000
 Environment=PGID=1000
 # Set the port for qBittorrent Web UI access at http://localhost:58080
 # You can change 58080 to any unused port you prefer.
-Environment=QBT_WEBUI_PORT=58080
+Environment=QBT_WEBUI_PORT=8080
 
 # Persistent Podman config storage (any local path, e.g., Volume=%h/.config/qBittorrent:/config)
 Volume=qbittorrent-config:/config
