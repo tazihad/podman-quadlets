@@ -20,7 +20,6 @@ Volume=%h/Downloads:/downloads
 # SELinux considerations for Fedora/RHEL:
 # - Use :Z on volume mounts to automatically relabel directories for container access.
 #   Example:
-#     Volume=%h/.config/qBittorrent:/config:Z
 #     Volume=%h/Downloads:/downloads:Z
 # - If you prefer to manage SELinux labeling manually or want to disable relabeling:
 #     SecurityLabelDisable=true
