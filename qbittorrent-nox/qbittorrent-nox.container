@@ -9,8 +9,8 @@ Timezone=Asia/Dhaka
 
 Environment=PUID=1000
 Environment=PGID=1000
-# Set the port for qBittorrent Web UI access at http://localhost:58080
-# You can change 58080 to any unused port you prefer.
+# Set the port for qBittorrent Web UI access at http://localhost:8080
+# You can change 8080 to any unused port you prefer.
 Environment=QBT_WEBUI_PORT=8080
 
 # Persistent Podman config storage (any local path, e.g., Volume=%h/.config/qBittorrent:/config)
