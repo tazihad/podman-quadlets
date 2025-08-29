@@ -1,0 +1,11 @@
+[Container]
+ContainerName=db
+Image=docker.io/library/mysql:8
+Environment=MYSQL_ROOT_PASSWORD=forgejo
+Environment=MYSQL_USER=forgejo
+Environment=MYSQL_PASSWORD=forgejo
+Environment=MYSQL_DATABASE=forgejo
+Pod=forgejo.pod
+Network=forgejo.network
+
+Volume=mysql-data:/var/lib/mysql
